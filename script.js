@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeBtn = document.querySelector(".close-btn");
 
   const albumImagesMap = {
+
+
 //folder title
 "Faithcheck 2023"
 : [
@@ -12,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
 "Faithcheck 2023/1.jpg",
 "Faithcheck 2023/IMG_7715.MOV",
 ],
-
-      // Add more entries for additional albums
-    };
+    // Add a default preview image for files without a preview
+    "__default__": "video.jpg"
+  };
 
   albumTiles.forEach(function (tile) {
     tile.addEventListener("click", function () {
@@ -22,7 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const albumImages = albumImagesMap[albumTitle];
 
       if (albumImages) {
-        const imageLinks = albumImages.map((image) => `<a href="${image}" target="_blank"><img src="${image}" alt="${albumTitle}" class="album-image"></a>`).join("");
+        const imageLinks = albumImages.map((image) => {
+          if (image.endsWith(".MOV")) {
+            // Replace MOV files with default image
+            return `<a href="${image}" target="_blank"><img src="${albumImagesMap['__default__']}" alt="${albumTitle}" class="album-image"></a>`;
+          } else {
+            return `<a href="${image}" target="_blank"><img src="${image}" alt="${albumTitle}" class="album-image"></a>`;
+          }
+        }).join("");
 
         const imageGrid = document.querySelector(".image-grid");
         imageGrid.innerHTML = imageLinks;
