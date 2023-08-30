@@ -5,34 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeBtn = document.querySelector(".close-btn");
 
   const albumImagesMap = {
-
-
-
-//album title
-"McDonalds 10/11/21"
+//folder title
+"Faithcheck 2023"
 : [
-//album content
-"mcDonalds/1.jpg",
-"mcDonalds/2.jpg",
-"mcDonalds/3.jpg",
-"mcDonalds/4.jpg",
-"mcDonalds/5.jpg",
-"mcDonalds/7.jpg",
-"mcDonalds/8.jpg",
-"mcDonalds/9.jpg",
-"mcDonalds/10.jpg",
-"mcDonalds/11.jpg",
-"mcDonalds/12.jpg",
-"mcDonalds/13.jpg",
-"mcDonalds/14.jpg",
-"mcDonalds/15.jpg",
-"mcDonalds/16.jpg",
-"mcDonalds/17.jpg",
-"mcDonalds/18.jpg",
+//folder content
+"Faithcheck 2023/1.jpg",
+"Faithcheck 2023/IMG_7715.MOV",
 ],
 
-        // Add more image URLs for Random
-      ],
       // Add more entries for additional albums
     };
 
