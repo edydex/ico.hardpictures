@@ -1,3 +1,2 @@
-
-Faithcheck 2023
 .git
+Faithcheck 2023
